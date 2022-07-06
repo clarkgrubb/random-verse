@@ -339,7 +339,7 @@ NUM_VERSES = sum(sum(book['verses']) for book in BOOKS)
 
 
 def index_to_verse(idx):
-    for book in BOOKS:
+    for bk_idx, book in enumerate(BOOKS):
         ch_idx = 0
         verses = book['verses']
         while ch_idx < len(verses) and idx > verses[ch_idx]:
@@ -348,15 +348,22 @@ def index_to_verse(idx):
         if ch_idx < len(verses):
             title = book['title']
             chapter = ch_idx + 1
-            verse = idx + 1
-            return f'{title} {chapter}:{verse}'
+            _verse = idx + 1
+            verse = (bk_idx, chapter, _verse, title)
+            return verse
     print(f'{idx} is greater than {NUM_VERSES}')
-            
+
+
+def serialize_verse(verse):
+    bk_idx, chapter, _verse, bk_title = verse
+    return f'{bk_title} {chapter}:{_verse}'
+
 
 def random_verse(n):
     idxs = random.sample(range(NUM_VERSES), k=n)
-    for idx in idxs:
-        print(index_to_verse(idx))
+    verses = sorted(index_to_verse(idx) for idx in idxs)
+    for verse in verses:
+        print(serialize_verse(verse))
 
 
 if __name__ == '__main__':
