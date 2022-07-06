@@ -110,31 +110,31 @@ BOOKS = [
         "title": "Job",
         "abbrev": "Job",
         "verses": [22, 13, 26, 21, 27, 30, 21, 22, 35, 22, 20, 25, 28, 22, 35, 22, 16, 21, 29, 29, 34, 30, 17, 25, 6, 14, 23, 28, 25, 31, 40, 22, 33, 37, 16, 33, 24, 41, 30, 24, 34, 17],
-        "tags": ["Old Testament"]
+        "tags": ["Old Testament", "Wisdom"]
     },
     {
         "title": "Psalms",
         "abbrev": "Ps.",
         "verses": [6, 12, 8, 8, 12, 10, 17, 9, 20, 18, 7, 8, 6, 7, 5, 11, 15, 50, 14, 9, 13, 31, 6, 10, 22, 12, 14, 9, 11, 12, 24, 11, 22, 22, 28, 12, 40, 22, 13, 17, 13, 11, 5, 26, 17, 11, 9, 14, 20, 23, 19, 9, 6, 7, 23, 13, 11, 11, 17, 12, 8, 12, 11, 10, 13, 20, 7, 35, 36, 5, 24, 20, 28, 23, 10, 12, 20, 72, 13, 19, 16, 8, 18, 12, 13, 17, 7, 18, 52, 17, 16, 15, 5, 23, 11, 13, 12, 9, 9, 5, 8, 28, 22, 35, 45, 48, 43, 13, 31, 7, 10, 10, 9, 8, 18, 19, 2, 29, 176, 7, 8, 9, 4, 8, 5, 6, 5, 6, 8, 8, 3, 18, 3, 3, 21, 26, 9, 8, 24, 13, 10, 7, 12, 15, 21, 10, 20, 14, 9, 6],
-        "tags": ["Old Testament"]
+        "tags": ["Old Testament", "Wisdom"]
     },
     {
         "title": "Proverbs",
         "abbrev": "Pr.",
         "verses": [33, 22, 35, 27, 23, 35, 27, 36, 18, 32, 31, 28, 25, 35, 33, 33, 28, 24, 29, 30, 31, 29, 35, 34, 28, 28, 27, 28, 27, 33, 31],
-        "tags": ["Old Testament"]
+        "tags": ["Old Testament", "Wisdom"]
     },
     {
         "title": "Ecclesiastes",
         "abbrev": "Ec.",
         "verses": [18, 26, 22, 16, 20, 12, 29, 17, 18, 20, 10, 14],
-        "tags": ["Old Testament"]
+        "tags": ["Old Testament", "Wisdom"]
     },
     {
         "title": "Song of Solomon",
         "abbrev": "S. of S.",
         "verses": [17, 17, 11, 16, 16, 13, 13, 14],
-        "tags": ["Old Testament"]
+        "tags": ["Old Testament", "Wisdom"]
     },
     {
         "title": "Isaiah",
@@ -402,19 +402,30 @@ BOOKS = [
     }
 ]
 
+TITLES = [bk['title'] for bk in BOOKS]
+LOWER_TITLES = {title.lower() for title in TITLES}
+TAGS = sorted({tg for bk in BOOKS for tg in bk['tags']})
+LOWER_TAGS = {tg.lower() for tg in TAGS}
+
 
 class RandomVerse:
     def __init__(self, books, full, tags):
+        self.books = []
         if books:
-            self.books = [bk for bk
-                          in BOOKS
-                          if bk['title'] in books or bk['abbrev'] in books]
-        elif tags:
-            _tags = set(tags)
-            self.books = [bk for bk
-                          in BOOKS
-                          if set(bk['tags']) & _tags]
-        else:
+            lower_books = [bk.lower() for bk in books]
+            self.books.extend(
+                [bk for bk
+                 in BOOKS
+                 if bk['title'].lower() in lower_books]
+            )
+        if tags:
+            lower_tags = set(tag.lower() for tag in tags)
+            self.books.extend(
+                [bk for bk
+                 in BOOKS
+                 if set(tg.lower() for tg in bk['tags']) & lower_tags]
+            )
+        if not self.books:
             self.books = BOOKS
         self.full = full
         self.num_verses = sum(sum(book['verses']) for book in self.books)
@@ -451,10 +462,29 @@ if __name__ == '__main__':
     parser.add_argument('--count', '-c', dest='count', type=int, default=10)
     parser.add_argument('--full', '-f',
                         dest='full',
-                        action='store_true',
-                        default=False)
+                        action='store_true')
+    parser.add_argument('--list-books', dest='list_books',
+                        action='store_true')
+    parser.add_argument('--list-tags', dest='list_tags',
+                        action='store_true')
     parser.add_argument('--tags', '-t', dest='tags', nargs='+')
     args = parser.parse_args()
+    if args.list_books:
+        for title in TITLES:
+            print(title)
+        exit(0)
+    if args.list_tags:
+        for tag in TAGS:
+            print(tag)
+        exit(0)
+    if args.books:
+        for book in args.books:
+            if book.lower() not in LOWER_TITLES:
+                raise Exception(f'Unrecognized book: {book}')
+    if args.tags:
+        for tag in args.tags:
+            if tag.lower() not in LOWER_TAGS:
+                raise Exception(f'Unrecognized tag: {tag}')
     random_verse = RandomVerse(books=args.books,
                                full=args.full,
                                tags=args.tags)
