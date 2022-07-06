@@ -402,43 +402,60 @@ BOOKS = [
     }
 ]
 
-NUM_VERSES = sum(sum(book['verses']) for book in BOOKS) 
 
+class RandomVerse:
+    def __init__(self, books, full, tags):
+        if books:
+            self.books = [bk for bk
+                          in BOOKS
+                          if bk['title'] in books or bk['abbrev'] in books]
+        elif tags:
+            _tags = set(tags)
+            self.books = [bk for bk
+                          in BOOKS
+                          if set(bk['tags']) & _tags]
+        else:
+            self.books = BOOKS
+        self.full = full
+        self.num_verses = sum(sum(book['verses']) for book in self.books)
 
-def index_to_verse(idx):
-    for bk_idx, book in enumerate(BOOKS):
-        ch_idx = 0
-        verses = book['verses']
-        while ch_idx < len(verses) and idx > verses[ch_idx]:
-            idx = idx - verses[ch_idx]
-            ch_idx += 1
-        if ch_idx < len(verses):
-            chapter = ch_idx + 1
-            _verse = idx + 1
-            verse = (bk_idx, chapter, _verse, book)
-            return verse
-    print(f'{idx} is greater than {NUM_VERSES}')
+    def index_to_verse(self, idx):
+        for bk_idx, book in enumerate(self.books):
+            ch_idx = 0
+            verses = book['verses']
+            while ch_idx < len(verses) and idx > verses[ch_idx]:
+                idx = idx - verses[ch_idx]
+                ch_idx += 1
+            if ch_idx < len(verses):
+                chapter = ch_idx + 1
+                _verse = idx + 1
+                verse = (bk_idx, chapter, _verse, book)
+                return verse
+        print(f'{idx} is greater than {self.num_verses}')
 
+    def serialize_verse(self, verse):
+        bk_idx, chapter, _verse, book = verse
+        bk = book['title'] if self.full else book['abbrev']
+        return f'{bk} {chapter}:{_verse}'
 
-def serialize_verse(verse, full):
-    bk_idx, chapter, _verse, book = verse
-    bk = book['title'] if full else book['abbrev']
-    return f'{bk} {chapter}:{_verse}'
-
-
-def random_verse(cnt, full):
-    idxs = random.sample(range(NUM_VERSES), k=cnt)
-    verses = sorted(index_to_verse(idx) for idx in idxs)
-    for verse in verses:
-        print(serialize_verse(verse, full))
+    def random_verse(self, cnt):
+        idxs = random.sample(range(self.num_verses), k=cnt)
+        verses = sorted(self.index_to_verse(idx) for idx in idxs)
+        for verse in verses:
+            print(self.serialize_verse(verse))
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('--books', '-b', dest='books', nargs='+')
     parser.add_argument('--count', '-c', dest='count', type=int, default=10)
     parser.add_argument('--full', '-f',
                         dest='full',
                         action='store_true',
                         default=False)
+    parser.add_argument('--tags', '-t', dest='tags', nargs='+')
     args = parser.parse_args()
-    random_verse(cnt=args.count, full=args.full)
+    random_verse = RandomVerse(books=args.books,
+                               full=args.full,
+                               tags=args.tags)
+    random_verse.random_verse(cnt=args.count)
