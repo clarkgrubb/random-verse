@@ -8,163 +8,163 @@ BOOKS = [
         "title": "Genesis",
         "abbrev": "Gen.",
         "verses": [31, 25, 24, 26, 32, 22, 24, 22, 29, 32, 32, 20, 18, 24, 21, 16, 27, 33, 38, 18, 34, 24, 20, 67, 34, 35, 46, 22, 35, 43, 55, 32, 20, 31, 29, 43, 36, 30, 23, 23, 57, 38, 34, 34, 28, 34, 31, 22, 33, 26],
-        "tags": ["Old Testament", "Pentateuch"]
+        "tags": ["Old Testament", "Pentateuch", "Torah"]
     },
     {
         "title": "Exodus",
         "abbrev": "Ex.",
         "verses": [22, 25, 22, 31, 23, 30, 25, 32, 35, 29, 10, 51, 22, 31, 27, 36, 16, 27, 25, 26, 36, 31, 33, 18, 40, 37, 21, 43, 46, 38, 18, 35, 23, 35, 35, 38, 29, 31, 43, 38],
-        "tags": ["Old Testament", "Pentateuch"]
+        "tags": ["Old Testament", "Pentateuch", "Torah"]
     },
     {
         "title": "Leviticus",
         "abbrev": "Lev.",
         "verses": [17, 16, 17, 35, 19, 30, 38, 36, 24, 20, 47, 8, 59, 57, 33, 34, 16, 30, 37, 27, 24, 33, 44, 23, 55, 46, 34],
-        "tags": ["Old Testament", "Pentateuch"]
+        "tags": ["Old Testament", "Pentateuch", "Torah"]
     },
     {
         "title": "Numbers",
         "abbrev": "Num.",
         "verses": [54, 34, 51, 49, 31, 27, 89, 26, 23, 36, 35, 16, 33, 45, 41, 50, 13, 32, 22, 29, 35, 41, 30, 25, 18, 65, 23, 31, 40, 16, 54, 42, 56, 29, 34, 13],
-        "tags": ["Old Testament", "Pentateuch"]
+        "tags": ["Old Testament", "Pentateuch", "Torah"]
     },
     {
         "title": "Deuteronomy",
         "abbrev": "Dt.",
         "verses": [46, 37, 29, 49, 33, 25, 26, 20, 29, 22, 32, 32, 18, 29, 23, 22, 20, 22, 21, 20, 23, 30, 25, 22, 19, 19, 26, 68, 29, 20, 30, 52, 29, 12],
-        "tags": ["Old Testament", "Pentateuch"]
+        "tags": ["Old Testament", "Pentateuch", "Torah"]
     },
     {
         "title": "Joshua",
         "abbrev": "Jos.",
         "verses": [18, 24, 17, 24, 15, 27, 26, 35, 27, 43, 23, 24, 33, 15, 63, 10, 18, 28, 51, 9, 45, 34, 16, 33],
-        "tags": ["Old Testament", "History", "Deuteronomistic History"]
+        "tags": ["Old Testament", "History", "Deuteronomistic History", "Neviim"]
     },
     {
         "title": "Judges",
         "abbrev": "Jg.",
         "verses": [36, 23, 31, 24, 31, 40, 25, 35, 57, 18, 40, 15, 25, 20, 20, 31, 13, 31, 30, 48, 25],
-        "tags": ["Old Testament", "History", "Deuteronomistic History"]
+        "tags": ["Old Testament", "History", "Deuteronomistic History", "Neviim"]
     },
     {
         "title": "Ruth",
         "abbrev": "Ru.",
         "verses": [22, 23, 18, 22],
-        "tags": ["Old Testament", "History"]
+        "tags": ["Old Testament", "History", "Ketuvim"]
     },
     {
         "title": "1 Samuel",
         "abbrev": "1 Sam.",
         "verses": [28, 36, 21, 22, 12, 21, 17, 22, 27, 27, 15, 25, 23, 52, 35, 23, 58, 30, 24, 42, 15, 23, 29, 22, 44, 25, 12, 25, 11, 31, 13],
-        "tags": ["Old Testament", "History", "Deuteronomistic History"]
+        "tags": ["Old Testament", "History", "Deuteronomistic History", "Neviim"]
     },
     {
         "title": "2 Samuel",
         "abbrev": "2 Sam.",
         "verses": [27, 32, 39, 12, 25, 23, 29, 18, 13, 19, 27, 31, 39, 33, 37, 23, 29, 33, 43, 26, 22, 51, 39, 25],
-        "tags": ["Old Testament", "History", "Deuteronomistic History"]
+        "tags": ["Old Testament", "History", "Deuteronomistic History", "Neviim"]
     },
     {
         "title": "1 Kings",
         "abbrev": "1 Kg.",
         "verses": [53, 46, 28, 34, 18, 38, 51, 66, 28, 29, 43, 33, 34, 31, 34, 34, 24, 46, 21, 43, 29, 53],
-        "tags": ["Old Testament", "History", "Deuteronomistic History"]
+        "tags": ["Old Testament", "History", "Deuteronomistic History", "Neviim"]
     },
     {
         "title": "2 Kings",
         "abbrev": "2 Kg.",
         "verses": [18, 25, 27, 44, 27, 33, 20, 29, 37, 36, 21, 21, 25, 29, 38, 20, 41, 37, 37, 21, 26, 20, 37, 20, 30],
-        "tags": ["Old Testament", "History", "Deuteronomistic History"]
+        "tags": ["Old Testament", "History", "Deuteronomistic History", "Neviim"]
     },
     {
         "title": "1 Chronicles",
         "abbrev": "1 Chr.",
         "verses": [54, 55, 24, 43, 26, 81, 40, 40, 44, 14, 47, 40, 14, 17, 29, 43, 27, 17, 19, 8, 30, 19, 32, 31, 31, 32, 34, 21, 30],
-        "tags": ["Old Testament", "History"]
+        "tags": ["Old Testament", "History", "Ketuvim"]
     },
     {
         "title": "2 Chronicles",
         "abbrev": "2 Chr.",
         "verses": [17, 18, 17, 22, 14, 42, 22, 18, 31, 19, 23, 16, 22, 15, 19, 14, 19, 34, 11, 37, 20, 12, 21, 27, 28, 23, 9, 27, 36, 27, 21, 33, 25, 33, 27, 23],
-        "tags": ["Old Testament", "History"]
+        "tags": ["Old Testament", "History", "Ketuvim"]
     },
     {
         "title": "Ezra",
         "abbrev": "Ezra",
         "verses": [11, 70, 13, 24, 17, 22, 28, 36, 15, 44],
-        "tags": ["Old Testament", "History"]
+        "tags": ["Old Testament", "History", "Ketuvim"]
     },
     {
         "title": "Nehemiah",
         "abbrev": "Neh.",
         "verses": [11, 20, 32, 23, 19, 19, 73, 18, 38, 39, 36, 47, 31],
-        "tags": ["Old Testament", "History"]
+        "tags": ["Old Testament", "History", "Ketuvim"]
     },
     {
         "title": "Esther",
         "abbrev": "Est.",
         "verses": [22, 23, 15, 17, 14, 14, 10, 17, 32, 3],
-        "tags": ["Old Testament", "History"]
+        "tags": ["Old Testament", "History", "Ketuvim"]
     },
     {
         "title": "Job",
         "abbrev": "Job",
         "verses": [22, 13, 26, 21, 27, 30, 21, 22, 35, 22, 20, 25, 28, 22, 35, 22, 16, 21, 29, 29, 34, 30, 17, 25, 6, 14, 23, 28, 25, 31, 40, 22, 33, 37, 16, 33, 24, 41, 30, 24, 34, 17],
-        "tags": ["Old Testament", "Wisdom"]
+        "tags": ["Old Testament", "Wisdom", "Ketuvim"]
     },
     {
         "title": "Psalms",
         "abbrev": "Ps.",
         "verses": [6, 12, 8, 8, 12, 10, 17, 9, 20, 18, 7, 8, 6, 7, 5, 11, 15, 50, 14, 9, 13, 31, 6, 10, 22, 12, 14, 9, 11, 12, 24, 11, 22, 22, 28, 12, 40, 22, 13, 17, 13, 11, 5, 26, 17, 11, 9, 14, 20, 23, 19, 9, 6, 7, 23, 13, 11, 11, 17, 12, 8, 12, 11, 10, 13, 20, 7, 35, 36, 5, 24, 20, 28, 23, 10, 12, 20, 72, 13, 19, 16, 8, 18, 12, 13, 17, 7, 18, 52, 17, 16, 15, 5, 23, 11, 13, 12, 9, 9, 5, 8, 28, 22, 35, 45, 48, 43, 13, 31, 7, 10, 10, 9, 8, 18, 19, 2, 29, 176, 7, 8, 9, 4, 8, 5, 6, 5, 6, 8, 8, 3, 18, 3, 3, 21, 26, 9, 8, 24, 13, 10, 7, 12, 15, 21, 10, 20, 14, 9, 6],
-        "tags": ["Old Testament", "Wisdom"]
+        "tags": ["Old Testament", "Wisdom", "Ketuvim"]
     },
     {
         "title": "Proverbs",
         "abbrev": "Pr.",
         "verses": [33, 22, 35, 27, 23, 35, 27, 36, 18, 32, 31, 28, 25, 35, 33, 33, 28, 24, 29, 30, 31, 29, 35, 34, 28, 28, 27, 28, 27, 33, 31],
-        "tags": ["Old Testament", "Wisdom"]
+        "tags": ["Old Testament", "Wisdom", "Ketuvim"]
     },
     {
         "title": "Ecclesiastes",
         "abbrev": "Ec.",
         "verses": [18, 26, 22, 16, 20, 12, 29, 17, 18, 20, 10, 14],
-        "tags": ["Old Testament", "Wisdom"]
+        "tags": ["Old Testament", "Wisdom", "Ketuvim"]
     },
     {
         "title": "Song of Solomon",
         "abbrev": "S. of S.",
         "verses": [17, 17, 11, 16, 16, 13, 13, 14],
-        "tags": ["Old Testament", "Wisdom"]
+        "tags": ["Old Testament", "Wisdom", "Ketuvim"]
     },
     {
         "title": "Isaiah",
         "abbrev": "Is.",
         "verses": [31, 22, 26, 6, 30, 13, 25, 22, 21, 34, 16, 6, 22, 32, 9, 14, 14, 7, 25, 6, 17, 25, 18, 23, 12, 21, 13, 29, 24, 33, 9, 20, 24, 17, 10, 22, 38, 22, 8, 31, 29, 25, 28, 28, 25, 13, 15, 22, 26, 11, 23, 15, 12, 17, 13, 12, 21, 14, 21, 22, 11, 12, 19, 12, 25, 24],
-        "tags": ["Old Testament", "Major Prophet", "Prophet"]
+        "tags": ["Old Testament", "Major Prophet", "Prophet", "Neviim"]
     },
     {
         "title": "Jeremiah",
         "abbrev": "Jer.",
         "verses": [19, 37, 25, 31, 31, 30, 34, 22, 26, 25, 23, 17, 27, 22, 21, 21, 27, 23, 15, 18, 14, 30, 40, 10, 38, 24, 22, 17, 32, 24, 40, 44, 26, 22, 19, 32, 21, 28, 18, 16, 18, 22, 13, 30, 5, 28, 7, 47, 39, 46, 64, 34],
-        "tags": ["Old Testament", "Major Prophet", "Prophet"]
+        "tags": ["Old Testament", "Major Prophet", "Prophet", "Neviim"]
     },
     {
         "title": "Lamentations",
         "abbrev": "Lam.",
         "verses": [22, 22, 66, 22, 22],
-        "tags": ["Old Testament", "Major Prophet", "Prophet"]
+        "tags": ["Old Testament", "Major Prophet", "Prophet", "Ketuvim"]
     },
     {
         "title": "Ezekiel",
         "abbrev": "Ezek.",
         "verses": [28, 10, 27, 17, 17, 14, 27, 18, 11, 22, 25, 28, 23, 23, 8, 63, 24, 32, 14, 49, 32, 31, 49, 27, 17, 21, 36, 26, 21, 26, 18, 32, 33, 31, 15, 38, 28, 23, 29, 49, 26, 20, 27, 31, 25, 24, 23, 35],
-        "tags": ["Old Testament", "Major Prophet", "Prophet"]
+        "tags": ["Old Testament", "Major Prophet", "Prophet", "Neviim"]
     },
     {
         "title": "Daniel",
         "abbrev": "Dan.",
         "verses": [21, 49, 30, 37, 31, 28, 28, 27, 27, 21, 45, 13],
-        "tags": ["Old Testament", "Major Prophet", "Prophet"]
+        "tags": ["Old Testament", "Major Prophet", "Prophet", "Ketuvim"]
     },
     {
         "title": "Hosea",
@@ -410,22 +410,14 @@ LOWER_TAGS = {tg.lower() for tg in TAGS}
 
 class RandomVerse:
     def __init__(self, books, full, tags):
-        self.books = []
-        if books:
-            lower_books = [bk.lower() for bk in books]
-            self.books.extend(
-                [bk for bk
-                 in BOOKS
-                 if bk['title'].lower() in lower_books]
-            )
-        if tags:
-            lower_tags = set(tag.lower() for tag in tags)
-            self.books.extend(
-                [bk for bk
-                 in BOOKS
-                 if set(tg.lower() for tg in bk['tags']) & lower_tags]
-            )
-        if not self.books:
+        lower_books = [bk.lower() for bk in books] if books else []
+        lower_tags = set(tag.lower() for tag in tags) if tags else {}
+        if books or tags:
+            self.books = [bk for bk
+                          in BOOKS
+                          if (bk['title'].lower() in lower_books)
+                          or (set(tg.lower() for tg in bk['tags']) & lower_tags)]
+        else:
             self.books = BOOKS
         self.full = full
         self.num_verses = sum(sum(book['verses']) for book in self.books)
@@ -467,6 +459,7 @@ if __name__ == '__main__':
                         action='store_true')
     parser.add_argument('--list-tags', dest='list_tags',
                         action='store_true')
+    parser.add_argument('--show-tags', dest='show_tag')
     parser.add_argument('--tags', '-t', dest='tags', nargs='+')
     args = parser.parse_args()
     if args.list_books:
@@ -476,6 +469,12 @@ if __name__ == '__main__':
     if args.list_tags:
         for tag in TAGS:
             print(tag)
+        exit(0)
+    if args.show_tag:
+        lower_tag = args.show_tag.lower()
+        for bk in BOOKS:
+            if lower_tag in {tg.lower() for tg in bk['tags']}:
+                print(bk['title'])
         exit(0)
     if args.books:
         for book in args.books:
